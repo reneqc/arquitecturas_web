@@ -17,7 +17,7 @@
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header>
-      <nav class="navbar navbar-expand-lg sticky-top site-nav" aria-label="Navegación principal">
+      <nav class="navbar navbar-expand-lg site-nav" aria-label="Navegación principal">
         <div class="container">
           <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio" aria-label="Microservicios, inicio">
             <span class="brand-mark" aria-hidden="true"><i class="bi bi-boxes"></i></span>
@@ -30,6 +30,7 @@
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
               <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
               <li class="nav-item"><a class="nav-link" href="#que-es">¿Qué es?</a></li>
+              <li class="nav-item"><a class="nav-link" href="#ruta">Ruta</a></li>
               <li class="nav-item"><a class="nav-link" href="#conceptos">Conceptos</a></li>
               <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
               <li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
@@ -38,6 +39,7 @@
           </div>
         </div>
       </nav>
+      <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
     </header>
 
     <main id="contenido">
@@ -103,7 +105,98 @@
               </article>
             </div>
           </div>
+          <div class="comparison-table-wrap reveal" id="comparativa">
+            <div class="comparison-table-heading">
+              <div>
+                <span class="eyebrow">A PRIMERA VISTA</span>
+                <h3>Monolito vs. microservicios</h3>
+              </div>
+              <span class="table-hint"><i class="bi bi-arrows-angle-expand me-1" aria-hidden="true"></i>Desliza para comparar</span>
+            </div>
+            <div class="table-responsive">
+              <table class="table comparison-table align-middle mb-0">
+                <caption class="visually-hidden">Comparación de monolito y microservicios por organización, despliegue, escalado, datos y operación.</caption>
+                <thead>
+                  <tr><th scope="col">Criterio</th><th scope="col"><i class="bi bi-box me-2" aria-hidden="true"></i>Monolito</th><th scope="col"><i class="bi bi-diagram-3 me-2" aria-hidden="true"></i>Microservicios</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Organización</th><td>Una aplicación con módulos internos.</td><td>Servicios separados por capacidad de negocio.</td></tr>
+                  <tr><th scope="row">Despliegue</th><td>Se publica el conjunto de la aplicación.</td><td>Cada servicio puede publicarse por separado.</td></tr>
+                  <tr><th scope="row">Escalado</th><td>Se replica toda la aplicación.</td><td>Se replica solo el servicio que lo necesita.</td></tr>
+                  <tr><th scope="row">Comunicación</th><td>Llamadas entre módulos dentro del proceso.</td><td>APIs y mensajes a través de la red.</td></tr>
+                  <tr><th scope="row">Operación</th><td>Menos piezas distribuidas que coordinar.</td><td>Necesita observabilidad y automatización sólidas.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
           <p class="comparison-note text-center"><i class="bi bi-lightbulb me-2" aria-hidden="true"></i>Microservicios no es una meta por sí misma: elige la arquitectura que se ajuste a tu contexto.</p>
+
+          <div class="architecture-lab reveal" id="laboratorio">
+            <div class="lab-heading">
+              <span class="lab-emoji" aria-hidden="true">🧪</span>
+              <div>
+                <span class="eyebrow">LABORATORIO INTERACTIVO</span>
+                <h3>¡Subió el tráfico de pagos! ¿Qué haces?</h3>
+                <p>Elige una arquitectura y observa qué parte de tu sistema tendrías que escalar.</p>
+              </div>
+            </div>
+            <div class="lab-controls" role="group" aria-label="Elegir arquitectura para el simulador">
+              <button class="btn btn-outline-primary lab-choice is-selected" type="button" data-architecture="monolith" aria-pressed="true">
+                <i class="bi bi-box me-2" aria-hidden="true"></i>Monolito
+              </button>
+              <button class="btn btn-outline-primary lab-choice" type="button" data-architecture="microservices" aria-pressed="false">
+                <i class="bi bi-diagram-3 me-2" aria-hidden="true"></i>Microservicios
+              </button>
+            </div>
+            <div class="lab-stage" id="labDiagram" aria-label="Diagrama de la arquitectura elegida"></div>
+            <p class="lab-feedback" id="labFeedback" role="status" aria-live="polite"></p>
+            <p class="lab-footnote"><i class="bi bi-lightbulb me-2" aria-hidden="true"></i>En producción, escalar también depende de la base de datos, el estado y los límites del sistema.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding timeline-section" id="ruta">
+        <div class="container">
+          <div class="section-heading text-center reveal">
+            <span class="eyebrow">UNA RUTA DE DISEÑO, NO UNA CARRERA</span>
+            <h2>De una app a servicios autónomos</h2>
+            <p>La arquitectura puede evolucionar a medida que cambian las necesidades del producto y del equipo.</p>
+          </div>
+          <ol class="architecture-timeline">
+            <li class="timeline-item reveal">
+              <span class="timeline-marker"><i class="bi bi-app-indicator" aria-hidden="true"></i></span>
+              <article class="timeline-card">
+                <span class="timeline-step">PASO 01</span><h3>Empieza con una aplicación</h3>
+                <p>Construye y entrega valor con el diseño más simple que cubra las necesidades actuales.</p>
+                <span class="timeline-tag"><i class="bi bi-rocket-takeoff me-1" aria-hidden="true"></i>Menos piezas, más foco</span>
+              </article>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="timeline-marker"><i class="bi bi-grid-1x2" aria-hidden="true"></i></span>
+              <article class="timeline-card">
+                <span class="timeline-step">PASO 02</span><h3>Ordena los módulos</h3>
+                <p>Separa responsabilidades y define límites internos antes de repartir procesos por la red.</p>
+                <span class="timeline-tag"><i class="bi bi-braces me-1" aria-hidden="true"></i>Modularidad primero</span>
+              </article>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="timeline-marker"><i class="bi bi-bezier2" aria-hidden="true"></i></span>
+              <article class="timeline-card">
+                <span class="timeline-step">PASO 03</span><h3>Detecta límites de dominio</h3>
+                <p>Identifica capacidades de negocio que de verdad necesitan autonomía y ciclos de cambio propios.</p>
+                <span class="timeline-tag"><i class="bi bi-bullseye me-1" aria-hidden="true"></i>Divide con intención</span>
+              </article>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="timeline-marker"><i class="bi bi-diagram-3" aria-hidden="true"></i></span>
+              <article class="timeline-card">
+                <span class="timeline-step">PASO 04</span><h3>Distribuye cuando aporte valor</h3>
+                <p>Adopta servicios autónomos junto a automatización, observabilidad y gestión de fallos.</p>
+                <span class="timeline-tag"><i class="bi bi-activity me-1" aria-hidden="true"></i>Autonomía con operación</span>
+              </article>
+            </li>
+          </ol>
+          <p class="timeline-takeaway reveal"><i class="bi bi-signpost-split me-2" aria-hidden="true"></i>No necesitas llegar al paso 4: un monolito modular puede ser el destino correcto.</p>
         </div>
       </section>
 

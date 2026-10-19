@@ -1,6 +1,6 @@
 # Arquitectura desacoplada: microservicios
 
-Sitio web educativo, adaptable a dispositivos móviles, para aprender los fundamentos de la arquitectura desacoplada y los microservicios. Incluye una comparación entre monolitos y microservicios, conceptos clave, un reproductor de video con carga local y un cuestionario interactivo de diez preguntas.
+Sitio web educativo, adaptable a dispositivos móviles, para aprender los fundamentos de la arquitectura desacoplada y los microservicios. Incluye una tabla comparativa, una ruta evolutiva de diseño, un laboratorio interactivo para simular el escalado, tarjetas animadas, un reproductor de video con carga local y un cuestionario interactivo de diez preguntas. El menú permanece fijo durante el desplazamiento y señala la sección actual.
 
 ## Ejecutar en GitHub Codespaces
 

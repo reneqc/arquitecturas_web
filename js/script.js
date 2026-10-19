@@ -364,12 +364,88 @@ function initializeNavigation() {
   });
 }
 
+function initializeArchitectureLab() {
+  const buttons = document.querySelectorAll(".lab-choice");
+  const diagram = document.querySelector("#labDiagram");
+  const feedback = document.querySelector("#labFeedback");
+
+  function showArchitecture(architecture) {
+    const isMicroservices = architecture === "microservices";
+    buttons.forEach((button) => {
+      const isSelected = button.dataset.architecture === architecture;
+      button.classList.toggle("is-selected", isSelected);
+      button.setAttribute("aria-pressed", String(isSelected));
+    });
+
+    diagram.innerHTML = isMicroservices
+      ? `<div class="lab-diagram" role="img" aria-label="Microservicios: los servicios de usuarios y pedidos siguen igual; solo pagos se escala con dos réplicas adicionales.">
+          <div class="lab-service is-muted"><i class="bi bi-people" aria-hidden="true"></i><strong>Usuarios</strong><small>sin cambios</small></div>
+          <span class="lab-connector" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+          <div class="lab-service is-muted"><i class="bi bi-bag" aria-hidden="true"></i><strong>Pedidos</strong><small>sin cambios</small></div>
+          <span class="lab-connector" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+          <div class="lab-service is-hot"><i class="bi bi-credit-card" aria-hidden="true"></i><strong>Pagos</strong><small>+2 réplicas ⚡</small></div>
+        </div>`
+      : `<div class="lab-diagram" role="img" aria-label="Monolito: usuarios, pedidos y pagos forman una única aplicación que debe escalarse en conjunto.">
+          <div class="lab-app"><i class="bi bi-boxes" aria-hidden="true"></i><strong>Aplicación completa</strong><small>Usuarios · Pedidos · Pagos</small></div>
+          <span class="lab-connector" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+          <div class="lab-service is-hot"><i class="bi bi-copy" aria-hidden="true"></i><strong>Replicar todo</strong><small>para atender pagos</small></div>
+        </div>`;
+
+    feedback.textContent = isMicroservices
+      ? "¡Buen desacoplamiento! Escala Pagos por separado y deja los otros servicios como están."
+      : "Aquí debes replicar la aplicación completa, aunque el pico de tráfico solo afecte a Pagos.";
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => showArchitecture(button.dataset.architecture));
+  });
+
+  showArchitecture("monolith");
+}
+
+function initializeScrollEffects() {
+  const progressBar = document.querySelector("#readingProgress");
+  const sections = [...document.querySelectorAll("main section[id]")];
+  const navigationLinks = [...document.querySelectorAll(".site-nav a[href^='#']")];
+  let animationFramePending = false;
+
+  function updateScrollEffects() {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+    progressBar.style.width = `${Math.min(progress, 100)}%`;
+
+    const activeSection = sections.reduce((active, section) => {
+      return section.getBoundingClientRect().top <= 105 ? section : active;
+    }, sections[0]);
+    navigationLinks.forEach((link) => {
+      const isActive = link.hash === `#${activeSection.id}`;
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+    animationFramePending = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!animationFramePending) {
+      animationFramePending = true;
+      window.requestAnimationFrame(updateScrollEffects);
+    }
+  }, { passive: true });
+  window.addEventListener("resize", updateScrollEffects);
+  updateScrollEffects();
+}
+
 function initializePage() {
   document.querySelector("#currentYear").textContent = String(new Date().getFullYear());
   renderQuestion();
   initializeVideoUpload();
   initializeRevealAnimations();
   initializeNavigation();
+  initializeArchitectureLab();
+  initializeScrollEffects();
 }
 
 initializePage();
