@@ -21,12 +21,6 @@
   box-sizing: border-box;
 }
 
-.quiz-option .form-check-input:not(:disabled) + .form-check-label:hover {
-  border-color: #8ab4f8;
-  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.1);
-  transform: translateX(3px);
-}
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
@@ -992,6 +986,12 @@ button,
   border-radius: 0.75rem;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quiz-option .form-check-input:not(:disabled) + .form-check-label:hover {
+  border-color: #8ab4f8;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.1);
+  transform: translateX(3px);
 }
 
 .quiz-option .form-check-input:focus-visible + .form-check-label {
