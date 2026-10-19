@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title">
+  <title id="title">Portada del video sobre microservicios</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10233d"/>
+      <stop offset="1" stop-color="#0a58ca"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1020" cy="150" r="210" fill="#fff" opacity=".04"/>
+  <circle cx="240" cy="690" r="280" fill="#fff" opacity=".04"/>
+  <g fill="none" stroke="#7eb0ff" stroke-linecap="round" stroke-width="5" opacity=".72">
+    <path d="M316 360h175m298 0h116M730 360v-135h175m-175 135v135h175"/>
+  </g>
+  <g fill="#fff">
+    <rect x="165" y="307" width="150" height="106" rx="20" opacity=".12"/>
+    <rect x="495" y="292" width="235" height="136" rx="24"/>
+    <rect x="905" y="170" width="210" height="110" rx="20" opacity=".16"/>
+    <rect x="905" y="305" width="210" height="110" rx="20" opacity=".16"/>
+    <rect x="905" y="440" width="210" height="110" rx="20" opacity=".16"/>
+  </g>
+  <g fill="#fff" font-family="Arial,sans-serif" text-anchor="middle">
+    <text x="612" y="350" font-size="25" font-weight="700">API GATEWAY</text>
+    <text x="612" y="385" font-size="17" opacity=".8">Microservicios</text>
+    <text x="1010" y="235" font-size="20" font-weight="700">USUARIOS</text>
+    <text x="1010" y="370" font-size="20" font-weight="700">PEDIDOS</text>
+    <text x="1010" y="505" font-size="20" font-weight="700">PAGOS</text>
+    <text x="240" y="465" font-size="20" font-weight="700">APRENDE</text>
+    <text x="640" y="630" font-size="34" font-weight="700">Arquitectura desacoplada</text>
+  </g>
+  <circle cx="240" cy="360" r="24" fill="#20a878"/>
+  <path d="m232 348 20 12-20 12z" fill="#fff"/>
+</svg>

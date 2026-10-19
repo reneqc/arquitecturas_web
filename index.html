@@ -1,51 +1,206 @@
-<br>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aprende los fundamentos de la arquitectura desacoplada y los microservicios con una guía, un video y un cuestionario interactivo.">
+    <meta name="theme-color" content="#ffffff">
+    <title>Microservicios | Arquitectura desacoplada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header>
+      <nav class="navbar navbar-expand-lg sticky-top site-nav" aria-label="Navegación principal">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio" aria-label="Microservicios, inicio">
+            <span class="brand-mark" aria-hidden="true"><i class="bi bi-boxes"></i></span>
+            <span>Micro<span class="text-primary">servicios</span></span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteMenu" aria-controls="siteMenu" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="siteMenu">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+              <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="#que-es">¿Qué es?</a></li>
+              <li class="nav-item"><a class="nav-link" href="#conceptos">Conceptos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+              <li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
+              <li class="nav-item ms-lg-2"><a class="btn btn-primary nav-cta" href="#quiz">Empezar Quiz <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-<table border="1">
-<tr>
-    <td colspan="2">
-        <img src="img/rene.jpg" height="80px" width="80px">
-    </td>
- </tr>
- <tr>
-    <td>
-        <b>APELLIDO:</b>
-    </td>
-    <td>
-        Quisaguano
-    </td>
- </tr>
-  <tr>
-    <td>
-        <b>NOMBRE:</b>
-    </td>
-    <td>
-        René
-    </td>
- </tr>
-  <tr>
-    <td>
-        <b>EMAIL:</b>
-    </td>
-    <td>
-        lquisaguano@gmail.com
-    </td>
- </tr>
-  <tr>
-    <td>
-        <b>DIRECCIÓN:</b>
-    </td>
-    <td>
-        Machachi
-    </td>
- </tr>
-  <tr>
-    <td>
-        <b>ACERCA DE MI:</b>
-    </td>
-    <td>
-        Ingeniero en Informática y Sistemas Computacionales, Magíster en Sistemas de Información y Candidato a Doctor (PhD) en Informática. Me desempeño como cofundador y CTO de Evolution Soft, empresa de desarrollo tecnológico. En el ámbito académico, cuento con más de media década de trayectoria como docente e investigador universitario de pregrado y posgrado en la Universidad Técnica de Cotopaxi (UTC). Mis líneas de investigación y enseñanza se centran en áreas vinculadas al desarrollo de software (desktop, web, móvil), Inteligencia de Negocios, Herramientas Tecnológicas y Ciencia de Datos.
-    </td>
- </tr>
-</table>
+    <main id="contenido">
+      <section class="hero-section" id="inicio">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 reveal">
+              <span class="eyebrow"><i class="bi bi-stars me-2" aria-hidden="true"></i>GUÍA PARA DESARROLLADORES</span>
+              <h1>Arquitectura Desacoplada: Construye Sistemas <span>Escalables</span></h1>
+              <p class="hero-copy">Descubre cómo dividir una aplicación en servicios pequeños, autónomos y capaces de evolucionar a su propio ritmo.</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a class="btn btn-primary btn-lg" href="#video"><i class="bi bi-play-circle me-2" aria-hidden="true"></i>Ver Video</a>
+                <a class="btn btn-outline-primary btn-lg" href="#quiz">Hacer el Quiz <i class="bi bi-arrow-down-right ms-1" aria-hidden="true"></i></a>
+              </div>
+              <div class="hero-proof"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Conceptos claros · Ejemplos prácticos · Quiz interactivo</div>
+            </div>
+            <div class="col-lg-6 reveal">
+              <div class="hero-art">
+                <img src="assets/img/hero.svg" alt="Diagrama de un API Gateway que conecta una aplicación con varios microservicios independientes" fetchpriority="high">
+                <div class="art-caption"><span class="caption-dot"></span>Servicios que colaboran, sin depender de una sola pieza</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- Informacion en tabla -->
+      <section class="section-padding" id="que-es">
+        <div class="container">
+          <div class="section-heading text-center reveal">
+            <span class="eyebrow">LA IDEA CENTRAL</span>
+            <h2>¿Qué es la arquitectura desacoplada?</h2>
+            <p>Una forma de diseñar software para que sus partes puedan cambiar y crecer con autonomía.</p>
+          </div>
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 reveal">
+              <p class="body-copy">En una arquitectura desacoplada, las responsabilidades del sistema se distribuyen entre componentes con límites bien definidos. Cada componente conoce lo necesario de los demás y se comunica mediante contratos, como APIs o mensajes.</p>
+              <p class="body-copy">Los <strong>microservicios</strong> llevan esta idea a servicios pequeños, organizados alrededor de capacidades del negocio. Cada servicio puede desarrollarse, desplegarse y escalarse de manera independiente, aunque el sistema completo exige buenas prácticas de operación y observabilidad.</p>
+            </div>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-6 reveal">
+              <article class="comparison-card monolith-card h-100">
+                <div class="comparison-title"><span class="comparison-icon"><i class="bi bi-box" aria-hidden="true"></i></span><div><span class="card-kicker">UNA SOLA UNIDAD</span><h3>Monolito</h3></div></div>
+                <p>La interfaz, la lógica de negocio y el acceso a datos se empaquetan y despliegan como una aplicación.</p>
+                <ul class="icon-list">
+                  <li class="positive"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Simple de empezar, probar y desplegar.</span></li>
+                  <li class="positive"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Las llamadas entre módulos son directas.</span></li>
+                  <li class="negative"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Un cambio puede requerir publicar toda la aplicación.</span></li>
+                  <li class="negative"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Escalar una función implica escalar el conjunto.</span></li>
+                </ul>
+              </article>
+            </div>
+            <div class="col-lg-6 reveal">
+              <article class="comparison-card micro-card h-100">
+                <div class="comparison-title"><span class="comparison-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span><div><span class="card-kicker">SERVICIOS AUTÓNOMOS</span><h3>Microservicios</h3></div></div>
+                <p>El sistema se compone de servicios pequeños, cada uno responsable de una capacidad concreta.</p>
+                <ul class="icon-list">
+                  <li class="positive"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Despliegue y escalado independientes.</span></li>
+                  <li class="positive"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Los equipos pueden elegir tecnologías apropiadas.</span></li>
+                  <li class="negative"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>La red y los fallos distribuidos añaden complejidad.</span></li>
+                  <li class="negative"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Requiere inversión en monitoreo y automatización.</span></li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <p class="comparison-note text-center"><i class="bi bi-lightbulb me-2" aria-hidden="true"></i>Microservicios no es una meta por sí misma: elige la arquitectura que se ajuste a tu contexto.</p>
+        </div>
+      </section>
+
+      <section class="section-padding soft-section" id="conceptos">
+        <div class="container">
+          <div class="section-heading text-center reveal">
+            <span class="eyebrow">PIEZAS DEL ECOSISTEMA</span>
+            <h2>Conceptos clave</h2>
+            <p>Herramientas y patrones que ayudan a que los servicios trabajen en equipo.</p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4 reveal"><article class="concept-card h-100"><span class="concept-icon"><i class="bi bi-signpost-split" aria-hidden="true"></i></span><h3>API Gateway</h3><p>Punto de entrada que enruta solicitudes y puede aplicar autenticación o límites de tráfico.</p></article></div>
+            <div class="col-md-6 col-lg-4 reveal"><article class="concept-card h-100"><span class="concept-icon"><i class="bi bi-search" aria-hidden="true"></i></span><h3>Service Discovery</h3><p>Permite encontrar instancias disponibles cuando los servicios cambian de ubicación.</p></article></div>
+            <div class="col-md-6 col-lg-4 reveal"><article class="concept-card h-100"><span class="concept-icon"><i class="bi bi-box-seam" aria-hidden="true"></i></span><h3>Contenedores</h3><p>Empaquetan una aplicación con sus dependencias para ejecutarla de forma consistente.</p></article></div>
+            <div class="col-md-6 col-lg-4 reveal"><article class="concept-card h-100"><span class="concept-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span><h3>Orquestación</h3><p>Kubernetes automatiza el despliegue, escalado y recuperación de contenedores.</p></article></div>
+            <div class="col-md-6 col-lg-4 reveal"><article class="concept-card h-100"><span class="concept-icon"><i class="bi bi-chat-left-dots" aria-hidden="true"></i></span><h3>Comunicación asíncrona</h3><p>Colas como RabbitMQ o servicios como Kafka desacoplan emisores y consumidores.</p></article></div>
+            <div class="col-md-6 col-lg-4 reveal"><article class="concept-card h-100"><span class="concept-icon"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></span><h3>Despliegue independiente</h3><p>Un servicio puede publicarse sin desplegar de nuevo todos los demás.</p></article></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" id="video">
+        <div class="container">
+          <div class="section-heading text-center reveal">
+            <span class="eyebrow">APRENDE A TU RITMO</span>
+            <h2>Mira el video explicativo</h2>
+            <p>Reproduce el video de ejemplo o carga un archivo desde tu equipo.</p>
+          </div>
+          <div class="video-card reveal">
+            <div class="ratio ratio-16x9 video-frame">
+              <video id="videoPlayer" controls preload="metadata" poster="assets/img/poster.svg" aria-label="Video explicativo sobre arquitectura de microservicios">
+                <source src="assets/video/microservicios.mp4" type="video/mp4">
+                Tu navegador no admite la reproducción de video HTML5.
+              </video>
+            </div>
+            <div class="video-tools">
+              <label class="form-label fw-semibold" for="videoUpload"><i class="bi bi-upload me-2 text-primary" aria-hidden="true"></i>Cargar un video propio</label>
+              <input class="form-control" type="file" id="videoUpload" accept="video/*" aria-describedby="videoHelp videoStatus">
+              <div id="videoHelp" class="form-text">Si no ves el video, sube uno desde tu equipo. El archivo se reproduce localmente y no se carga a ningún servidor.</div>
+              <p id="videoStatus" class="video-status" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="accordion transcript-accordion reveal" id="transcriptAccordion">
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="transcriptHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#transcriptContent" aria-expanded="false" aria-controls="transcriptContent">
+                  <i class="bi bi-card-text me-2 text-primary" aria-hidden="true"></i>Resumen y transcripción orientativa
+                </button>
+              </h3>
+              <div id="transcriptContent" class="accordion-collapse collapse" aria-labelledby="transcriptHeading" data-bs-parent="#transcriptAccordion">
+                <div class="accordion-body">El video de esta sección puede ser reemplazado por el material de clase. Como guía, recuerda que una arquitectura de microservicios divide una aplicación en servicios autónomos que se comunican mediante APIs o mensajería. El API Gateway organiza el acceso, los contenedores facilitan la portabilidad y la orquestación automatiza su operación. La independencia aporta flexibilidad, pero también demanda observabilidad, automatización y diseño cuidadoso de fallos.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding quiz-section" id="quiz">
+        <div class="container">
+          <div class="section-heading text-center reveal">
+            <span class="eyebrow">PON A PRUEBA LO APRENDIDO</span>
+            <h2>¿Listo para el desafío?</h2>
+            <p>Responde diez preguntas y recibe una explicación en cada paso.</p>
+          </div>
+          <div class="quiz-card reveal" id="quizApp" aria-live="polite">
+            <div id="quizContent"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding author-section" id="autor">
+        <div class="container">
+          <div class="author-card reveal">
+            <div class="author-photo-wrap"><img class="author-photo" src="img/rene.jpg" alt="Fotografía de René Quisaguano" loading="lazy"></div>
+            <div class="author-details">
+              <span class="eyebrow">SOBRE EL CREADOR</span>
+              <h2>René Quisaguano</h2>
+              <p class="author-title">Ingeniero en Informática y Sistemas Computacionales · Magíster en Sistemas de Información · Candidato a PhD en Informática</p>
+              <p>Cofundador y CTO de Evolution Soft, y docente e investigador universitario de pregrado y posgrado en la Universidad Técnica de Cotopaxi (UTC). Su trayectoria académica supera media década y sus áreas de trabajo incluyen desarrollo de software de escritorio, web y móvil, inteligencia de negocios, herramientas tecnológicas y ciencia de datos.</p>
+              <div class="author-links">
+                <a href="mailto:lquisaguano@gmail.com"><i class="bi bi-envelope me-2" aria-hidden="true"></i>lquisaguano@gmail.com</a>
+                <span><i class="bi bi-geo-alt me-2" aria-hidden="true"></i>Machachi, Ecuador</span>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-2" aria-hidden="true"></i>GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="mb-0">© <span id="currentYear"></span> René Quisaguano · Material educativo</p>
+        <div class="footer-links"><a href="#autor">Acerca del autor</a><a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot</a><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap 5</a></div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
